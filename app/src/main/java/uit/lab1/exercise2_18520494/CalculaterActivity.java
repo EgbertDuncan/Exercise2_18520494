@@ -1,6 +1,7 @@
 package uit.lab1.exercise2_18520494;
 
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
@@ -72,15 +73,10 @@ public class CalculaterActivity extends AppCompatActivity {
 
 //
     }
-    private View.OnClickListener buttonListener = new View.OnClickListener() {
+    private final View.OnClickListener buttonListener = new View.OnClickListener() {
+        @SuppressLint({"SetTextI18n", "NonConstantResourceId"})
         public void onClick(View v) {
-            // do something when the button is clicked
-            // Yes we will handle click here but which button clicked??? We don't know
-
-            // So we will make
-
                 Button bt = (Button) v;
-                Log.d("aaa","aaaa");
                 switch (bt.getId()) {
                     case R.id.btn0:
                         EditTextNumber.setText(EditTextNumber.getText().toString() + "0");
@@ -154,6 +150,8 @@ public class CalculaterActivity extends AppCompatActivity {
                             EditTextKQ.setText(null);
                         }
                         break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + bt.getId());
                 }
 
         }

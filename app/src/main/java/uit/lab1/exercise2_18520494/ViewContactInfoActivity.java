@@ -1,5 +1,6 @@
 package uit.lab1.exercise2_18520494;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
@@ -25,10 +26,10 @@ public class ViewContactInfoActivity extends AppCompatActivity {
         btnFinish = findViewById(R.id.btnFinishh);
         btnFinish.setOnClickListener(mClickFinishListener);
 
-        Bundle bundle = getIntent().getExtras();
-        String name = bundle.getString("nameKey");
-        String email = bundle.getString("emailKey");
-        String project = bundle.getString("projectKey");
+        Intent mIntent = getIntent();
+        String name = mIntent.getStringExtra("nameKey");
+        String email = mIntent.getStringExtra("emailKey");
+        String project = mIntent.getStringExtra("projectKey");
 
         txtNameValue.setText(name);
         txtEmailValue.setText(email);

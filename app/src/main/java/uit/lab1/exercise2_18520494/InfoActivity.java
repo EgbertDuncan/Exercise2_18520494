@@ -3,32 +3,39 @@ package uit.lab1.exercise2_18520494;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class InfoActivity extends AppCompatActivity {
-    TextView txtName, txtEmail, txtProject;
-
+    EditText edtName, edtEmail, edtProject;
+    Button btnContInfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-    
-        txtName = findViewById(R.id.txtName);
-        txtEmail = findViewById(R.id.txtEmail);
-        txtProject = findViewById(R.id.txtProject);
+
+        edtName = findViewById(R.id.editTextName);
+        edtEmail = findViewById(R.id.editTextEmail);
+        edtProject = findViewById(R.id.editTextProject);
+
+        btnContInfo = findViewById(R.id.btnContactInformation);
+
+        btnContInfo.setOnClickListener(view -> {
+            Intent iGetContactInfo = new Intent(InfoActivity.this, ViewContactInfoActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("nameKey", edtName.getText().toString());
+            bundle.putString("emailKey", edtEmail.getText().toString());
+            bundle.putString("projectKey", edtProject.getText().toString());
+            iGetContactInfo.putExtras(bundle);
+
+            startActivity(iGetContactInfo);
+        });
 
     }
-    public void onClick(View v){
-        Intent iGetContactInfo = new Intent(getApplicationContext(), ViewContactInfoActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("nameKey", txtName.getText().toString());
-        bundle.putString("emailKey", txtEmail.getText().toString());
-        bundle.putString("projectKey", txtProject.getText().toString());
-        iGetContactInfo.putExtras(bundle);
 
-        startActivity(iGetContactInfo);
-    }
+
 
 }

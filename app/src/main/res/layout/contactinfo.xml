@@ -25,11 +25,12 @@
         <TextView
             android:id="@+id/txtNameInfoValue"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:ems="10"
             android:textColor="@color/white"
             android:inputType="textPersonName"
-            android:background="@drawable/custom_edit_test"/>
+            android:textSize="15sp"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -46,19 +47,20 @@
             android:layout_height="wrap_content"
             android:text="Email:"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             />
 
         <TextView
             android:id="@+id/txtEmailInfoValue"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textColor="@color/white"
             android:ems="10"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:background="@drawable/custom_edit_test"
+            android:textSize="15sp"
+
+
             />
     </LinearLayout>
     <LinearLayout
@@ -75,18 +77,18 @@
             android:layout_height="wrap_content"
             android:text="project:"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/txtProjectInfoValue"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:ems="10"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
+            android:textSize="15sp"
             android:textColor="@color/white"
-            android:background="@drawable/custom_edit_test"/>
+            />
     </LinearLayout>
 
     <Button
@@ -95,11 +97,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:text="View Contact Information"
+        android:text="Finish"
         android:background="@drawable/custom_button"
         android:layout_marginTop="5dp"
         android:textAllCaps="false"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textColor="@color/white"
         />
 </LinearLayout>
